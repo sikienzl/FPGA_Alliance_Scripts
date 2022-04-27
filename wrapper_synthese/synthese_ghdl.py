@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """This script is a wrapper for the alliance-tool-suite from
-   asim.lip6.fr.
+   http://www-soc.lip6.fr.
 
    This script requires that the alliance toolchain is already
    installed and the corresponding environment variables are set.
