@@ -16,36 +16,34 @@ def input_file_empty():
 
 def get_vasy_command(parser_args):
     str_vasy_command = StringBuilder.StringBuilder()
-    if parser_args.command == 'vasy':
-        str_vasy_command.Append("vasy ")
-        if (parser_args.i is None):
-            input_file_empty()
-            sys.exit(1)  
-        if (parser_args.a is not None):
-            str_vasy_command.Append("-a ")
-        if (parser_args.p is not None):
-            str_vasy_command.Append("-p ")
-        if (parser_args.i is not None):
-            str_vasy_command.Append(parser_args.i + " ")
-        if (parser_args.o is not None):
-            str_vasy_command.Append(parser_args.o)
-        if (parser_args.o is None):
-            str_vasy_command.Append(parser_args.i + "_vasy")
+    str_vasy_command.Append(parser_args.command + " ")
+    if (parser_args.i is None):
+        input_file_empty()
+        sys.exit(1)  
+    if (parser_args.a is not None):
+        str_vasy_command.Append("-a ")
+    if (parser_args.p is not None):
+        str_vasy_command.Append("-p ")
+    if (parser_args.i is not None):
+        str_vasy_command.Append(parser_args.i + " ")
+    if (parser_args.o is not None):
+        str_vasy_command.Append(parser_args.o)
+    if (parser_args.o is None):
+        str_vasy_command.Append(parser_args.i + "_vasy")
     return str_vasy_command
 
 def get_boom_command(parser_args):
     str_boom_command = StringBuilder.StringBuilder()
-    if parser_args.command == 'boom':
-        str_boom_command.Append("boom ")
-        if (parser_args.i is None):
-            input_file_empty()
-            sys.exit(1)
-        if (parser_args.l is not None):
-            str_boom_command.Append("-l " + str(parser_args.l) + " ")
-        if (parser_args.d is not None):
-            str_boom_command.Append("-d " + str(parser_args.d) + " ") 
-        if (parser_args.i is not None):
-            str_boom_command.Append(parser_args.i + " ")
+    str_boom_command.Append(parser_args.command + " ")
+    if (parser_args.i is None):
+        input_file_empty()
+        sys.exit(1)
+    if (parser_args.l is not None):
+        str_boom_command.Append("-l " + str(parser_args.l) + " ")
+    if (parser_args.d is not None):
+        str_boom_command.Append("-d " + str(parser_args.d) + " ") 
+    if (parser_args.i is not None):
+        str_boom_command.Append(parser_args.i + " ")
     
     output = ""
     if (parser_args.o is not None):
@@ -59,14 +57,13 @@ def get_boom_command(parser_args):
 
 def get_boog_command(parser_args):
     str_boog_command = StringBuilder.StringBuilder()
-    if parser_args.command == 'boog':
-        str_boog_command.Append("boog ")
-        if (parser_args.i is None):
-            input_file_empty()
-            sys.exit(1)
-        if (parser_args.m is not None):
-            str_boog_command.Append("-m " + str(parser_args.m) + " ")
-        if (parser_args.i is not None):
+    str_boog_command.Append(parser_args.command + " ")
+    if (parser_args.i is None):
+        input_file_empty()
+        sys.exit(1)
+    if (parser_args.m is not None):
+        str_boog_command.Append("-m " + str(parser_args.m) + " ")
+    if (parser_args.i is not None):
             str_boog_command.Append(parser_args.i + " ")
 
     output = ""
@@ -81,17 +78,16 @@ def get_boog_command(parser_args):
 
 def get_loon_command(parser_args):
     str_loon_command = StringBuilder.StringBuilder()
-    if parser_args.command == 'loon':
-        str_loon_command.Append("loon ")
-        if (parser_args.i is None):
-            input_file_empty()
-            sys.exit(1)
-        if (parser_args.m is not None):
-            str_loon_command.Append("-m " + str(parser_args.m) + " ")
-        if (parser_args.x is not None):
-            str_loon_command.Append("-x " + str(parser_args.x) + " ")
-        if (parser_args.i is not None):
-            str_loon_command.Append(parser_args.i + " ")
+    str_loon_command.Append(parser_args.loon + " ")
+    if (parser_args.i is None):
+        input_file_empty()
+        sys.exit(1)
+    if (parser_args.m is not None):
+        str_loon_command.Append("-m " + str(parser_args.m) + " ")
+    if (parser_args.x is not None):
+        str_loon_command.Append("-x " + str(parser_args.x) + " ")
+    if (parser_args.i is not None):
+        str_loon_command.Append(parser_args.i + " ")
 
     output = ""
     if (parser_args.o is not None):
@@ -135,11 +131,18 @@ def main():
 
 
     args = parser.parse_args()
-    #str_command = get_vasy_command(args)
-    #str_command = get_boom_command(args) 
-    #str_command = get_boog_command(args)
-    str_command = get_loon_command(args)
+    str_command = ""
+    if args.command == "vasy":
+        str_command = get_vasy_command(args)
+    elif args.command == "boom":
+        str_command = get_boom_command(args) 
+    elif args.command == "boog":
+        str_command = get_boog_command(args)
+    elif args.command == "loon":
+        str_command = get_loon_command(args)
+    
     print(str_command)
+
 
 
 
