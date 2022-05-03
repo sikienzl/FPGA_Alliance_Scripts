@@ -6,6 +6,8 @@
    This script requires that the alliance toolchain is already
    installed and the corresponding environment variables are set.
 """
+__author__ = "Siegfried Kienzle"
+__email__ = "siegfried.kienzle@gmx.de"
 
 import argparse
 import sys
