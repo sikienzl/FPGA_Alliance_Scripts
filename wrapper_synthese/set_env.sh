@@ -1,11 +1,7 @@
 #!/bin/bash
 # script-name: set_env.sh
-# description: This script checks
-# if the synthese_ghdl.py
-# inside the current folder
-# exist and adds then the 
-# path to the PATH-Environment
-# Variable.
+# Description: set_env.sh adds the path
+# of synthese_ghdl.py to the PATH-variable.
 # Author: Siegfried Kienzle
 # Date : 03.05.2022
 
