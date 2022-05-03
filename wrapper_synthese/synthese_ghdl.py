@@ -9,6 +9,7 @@
 
 import argparse
 import sys
+import subprocess
 import StringBuilder
 
 def input_file_empty():
@@ -143,7 +144,7 @@ def main():
     
     print(str_command)
 
-
+    subprocess.run(str(str_command).split())
 
 
 
