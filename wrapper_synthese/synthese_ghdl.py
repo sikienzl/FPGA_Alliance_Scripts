@@ -131,7 +131,8 @@ def main():
     parser_loon.add_argument('-x', type=int, help='[0|1] kind of .xsc-file 0=critical path; 1=signal')
     parser_loon.add_argument('-o', type=str, help='output-file in vst-format')
 
-
+    parser_all = sub_parsers.add_parser('all', help='run all commands with default values')
+    parser_all.add_argument('-i', type=str, help='input-file in .vhdl-format')
 
     args = parser.parse_args()
     str_command = ""
@@ -143,6 +144,8 @@ def main():
         str_command = get_boog_command(args)
     elif args.command == "loon":
         str_command = get_loon_command(args)
+    elif args.command == "all":
+        print("all")
     
     print(str_command)
 
