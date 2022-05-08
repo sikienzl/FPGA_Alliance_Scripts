@@ -8,6 +8,7 @@
 
 from io import StringIO
 
+
 class StringBuilder:
     _file_str = None
 
