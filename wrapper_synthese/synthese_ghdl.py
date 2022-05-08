@@ -20,7 +20,11 @@ def input_file_empty():
 
 
 def execute_command(argument_str):
-    subprocess.run(str(argument_str).split())
+    try:
+        subprocess.check_output(str(argument_str).split())
+    except subprocess.CalledProcessError as e:
+        print(e.output)
+        sys.exit(1)
 
 
 def get_vasy_command(parser_args):
