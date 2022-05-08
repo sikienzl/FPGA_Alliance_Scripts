@@ -157,9 +157,9 @@ def main():
         str_boom_command = "boom " + args.i + "_vasy " + args.i + "_boom"
         execute_command(str_boom_command)
         str_boog_command = "boog " + args.i + "_boom " + args.i + "_boog"
-        execute_command(str_boom_command)
+        execute_command(str_boog_command)
         str_loon_command = "loon -x 1 " + args.i + "_boog " + args.i + "_final" 
-        execute_command(str_boom_command)
+        execute_command(str_loon_command)
 
 if __name__ == "__main__":
     main()
