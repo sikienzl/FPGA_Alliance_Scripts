@@ -27,7 +27,7 @@ $
 ```
 
 If you use the command `all` the four commands `vasy`, `boom`, `boog` and `loon` will be executed.
-Here are the default parameters `-a` and `-p` used for `vasy` and `-x 1` for loon. 
+Here are the default parameters `-a` and `-p` used for `vasy` and `-x 1` for `loon`. 
 On the other commands no default parameters are set. 
 
 ## cleanup.py
