@@ -17,6 +17,9 @@ import StringBuilder
 def input_file_empty():
     print("No input file defined!")
 
+def execute_command(argument_str):
+    subprocess.run(str(argument_str).split())
+
 def get_vasy_command(parser_args):
     str_vasy_command = StringBuilder.StringBuilder()
     str_vasy_command.Append(parser_args.command + " ")
@@ -138,26 +141,25 @@ def main():
     str_command = ""
     if args.command == "vasy":
         str_command = get_vasy_command(args)
+        execute_command(str_command)
     elif args.command == "boom":
         str_command = get_boom_command(args) 
+        execute_command(str_command)
     elif args.command == "boog":
         str_command = get_boog_command(args)
+        execute_command(str_command)
     elif args.command == "loon":
         str_command = get_loon_command(args)
+        execute_command(str_command)
     elif args.command == "all":
-        print("all")
-    
-    print(str_command)
-
-    subprocess.run(str(str_command).split())
-
-
-
-
-
-
-
-
+        str_vasy_command = "vasy -a -p " + args.i + " " + args.i + "_vasy"
+        execute_command(str_vasy_command)
+        str_boom_command = "boom " + args.i + "_vasy " + args.i + "_boom"
+        execute_command(str_boom_command)
+        str_boog_command = "boog " + args.i + "_boom " + args.i + "_boog"
+        execute_command(str_boom_command)
+        str_loon_command = "loon -x 1 " + args.i + "_boog " + args.i + "_final" 
+        execute_command(str_boom_command)
 
 if __name__ == "__main__":
     main()
