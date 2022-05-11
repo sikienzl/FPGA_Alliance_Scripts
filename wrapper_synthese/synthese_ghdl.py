@@ -21,7 +21,17 @@ def input_file_empty():
 
 def execute_command(argument_str):
     try:
-        subprocess.check_output(str(argument_str).split())
+        output = subprocess.check_output(str(argument_str).split())
+        formatted_output = str(output).replace(
+            '\\n',
+            '\n').replace(
+            '\\t',
+            '\t').replace(
+            "b'",
+            "").replace(
+                'b"',
+            '')
+        print(formatted_output)
     except subprocess.CalledProcessError as e:
         print(e.output)
         sys.exit(1)
