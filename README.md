@@ -1,4 +1,6 @@
 # FPGA Alliance Scripts
+----
+[![Python CI](https://github.com/sikienzl/FPGA_Alliance_Scripts/actions/workflows/python-ci.yml/badge.svg)](https://github.com/sikienzl/FPGA_Alliance_Scripts/actions/workflows/python-ci.yml)
 
 This repository contains helper scripts for a simple synthesis flow based on the Alliance toolchain.
 
