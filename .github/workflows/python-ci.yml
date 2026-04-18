@@ -1,0 +1,34 @@
+name: Python CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  validate-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate Python syntax
+        run: python -m compileall wrapper_synthese
+
+      - name: Run CLI help smoke tests
+        working-directory: wrapper_synthese
+        run: |
+          python synthese_ghdl.py --help
+          python synthese_ghdl.py vasy --help
+          python synthese_ghdl.py boom --help
+          python synthese_ghdl.py boog --help
+          python synthese_ghdl.py loon --help
+          python synthese_ghdl.py all --help
+          python cleanup.py --help
